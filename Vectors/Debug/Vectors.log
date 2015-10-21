@@ -1,0 +1,20 @@
+﻿Build started 10/21/2015 10:38:55 AM.
+     1>Project "C:\Users\Guy.Goudeau\Desktop\Homework\Vectors\Vectors.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt Source.cpp
+         Source.cpp
+     1>c:\users\guy.goudeau\desktop\homework\vectors\header.h(44): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+         c:\users\guy.goudeau\desktop\homework\vectors\header.h(43): note: while compiling class template member function 'void Vectors<int>::Normalize(void)'
+         c:\users\guy.goudeau\desktop\homework\vectors\source.cpp(32): note: see reference to function template instantiation 'void Vectors<int>::Normalize(void)' being compiled
+         c:\users\guy.goudeau\desktop\homework\vectors\source.cpp(12): note: see reference to class template instantiation 'Vectors<int>' being compiled
+     1>c:\users\guy.goudeau\desktop\homework\vectors\header.h(39): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+         c:\users\guy.goudeau\desktop\homework\vectors\header.h(38): note: while compiling class template member function 'void Vectors<int>::SqRoot(void)'
+         c:\users\guy.goudeau\desktop\homework\vectors\source.cpp(28): note: see reference to function template instantiation 'void Vectors<int>::SqRoot(void)' being compiled
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Guy.Goudeau\Desktop\Homework\Vectors\Debug\Vectors.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\Guy.Goudeau\Desktop\Homework\Vectors\Debug\Vectors.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Guy.Goudeau\Desktop\Homework\Vectors\Debug\Vectors.lib" /MACHINE:X86 Debug\Source.obj
+         Vectors.vcxproj -> C:\Users\Guy.Goudeau\Desktop\Homework\Vectors\Debug\Vectors.exe
+     1>Done Building Project "C:\Users\Guy.Goudeau\Desktop\Homework\Vectors\Vectors.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.60
