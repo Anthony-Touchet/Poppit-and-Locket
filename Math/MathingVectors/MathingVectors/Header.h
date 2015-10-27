@@ -55,17 +55,18 @@ public:
 		return sr;
 	}
 
-	void Nomalizing()
+	Vector Nomalize()
 	{
-		double mag = this->Magnitude();
-		double newx = x / mag;
-		double newy = y / mag;
-		double newz = z / mag;
+		double length = this->Magnitude();
+		double newx = x / length;
+		double newy = y / length;
+		double newz = z / length;
 
-		cout << "The normalized c is: " << newx << ", " << newy << ", " << newz << endl;
+		Vector temp(newx, newy, newz);
+		return temp;
 	}
 
-	double operator*(Vector other)
+	double operator*(Vector other) //Dot Product
 	{
 		Vector temp(0, 0);
 		temp.x = x * other.x;
@@ -74,6 +75,17 @@ public:
 		double dot = temp.x + temp.y + temp.z;
 
 		return dot;
+	}
+
+	Vector operator/(Vector other)//Cross Product
+	{
+		double crossx, crossy, crossz;
+		crossx = (y * other.z) - (other.y * z);
+		crossy = (z * other.x) - (other.z * x);
+		crossz = (x * other.y) - (other.x * y);
+
+		Vector cross(crossx, crossy, crossz);
+		return cross;
 	}
 };
 

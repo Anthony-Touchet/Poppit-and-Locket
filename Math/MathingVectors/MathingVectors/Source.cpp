@@ -13,24 +13,12 @@ Math...
 
 int main(){
 
-	Vector<double> a (7, 5);//Vector a
-	Vector<double> b (0, 2);//Vector b
+	Vector<double> a (8, 4);//Vector a
+	Vector<double> b (2, 2);//Vector b
 
-	Vector<double> c = a + b;//Verctor c is equal to a + b
+	Vector<double> result = a.Nomalize();
 
-	c.Print();
-
-	cout << "\n";
-
-	cout << "The magnitude is: " << c.Magnitude() << endl;
-
-	cout << "\n";
-
-	c.Nomalizing();
-
-	cout << "\n";
-	
-	cout << "The Dot Product of a and b is: " << a * b << endl;
+	cout << result.x << " " << result.y << " " << result.z << endl;
 
 	system("pause");
 }
