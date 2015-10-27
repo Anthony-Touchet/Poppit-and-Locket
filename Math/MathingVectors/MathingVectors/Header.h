@@ -57,10 +57,9 @@ public:
 
 	Vector Nomalize()
 	{
-		double length = this->Magnitude();
-		double newx = x / length;
-		double newy = y / length;
-		double newz = z / length;
+		double newx = x / z;
+		double newy = y / z;
+		double newz = z / z;
 
 		Vector temp(newx, newy, newz);
 		return temp;
@@ -87,5 +86,21 @@ public:
 		Vector cross(crossx, crossy, crossz);
 		return cross;
 	}
-};
 
+	double Angle(Vector b)//Angle between two vectors.
+	{
+		double base, opp, hyp;
+		opp = this->Magnitude();
+		base = b.Magnitude();
+		hyp = sqrt((base * base) + (opp * opp));
+
+		Vector tri(base, opp, hyp);
+		tri = tri.Nomalize();
+
+		double angle = acos(base / hyp);
+
+		angle = (angle / 3.14) * 180;
+
+		return angle;
+	}
+};
