@@ -13,12 +13,12 @@ Math...
 
 int main(){
 
-	Vector<double> a (8, 4);//Vector a
-	Vector<double> b (2, 2);//Vector b
+	Vector<double> a (14, 5, -5);//Vector a
+	Vector<double> b (-2, 1, 43);//Vector b
 
-	Vector<double> result = a.Nomalize();
+	Vector<double> result = a / b;
 
-	cout << result.x << " " << result.y << " " << result.z << endl;
+	cout << result.x << ", " << result.y << ", " << result.z << endl;
 
 	system("pause");
 }
