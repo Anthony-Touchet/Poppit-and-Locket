@@ -1,0 +1,124 @@
+﻿Build started 10/27/2015 5:52:15 PM.
+     1>Project "C:\Users\anthony.touchet\Documents\GitHub\Poppit-and-Locket\Math\LibraryTest\test\test\test.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I"C:\Users\anthony.touchet\Documents\GitHub\Poppit-and-Locket\Math\MathingVectors\MathingVectors" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt Source.cpp
+         Source.cpp
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(22): error C2988: unrecognizable template declaration/definition
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(22): error C2143: syntax error: missing ';' before '<'
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(22): error C2433: 'basic_istream': 'inline' not permitted on data declarations
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(22): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(22): error C2059: syntax error: '<'
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(77): error C2143: syntax error: missing ';' before '{'
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(77): error C2447: '{': missing function header (old-style formal list?)
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(126): error C2988: unrecognizable template declaration/definition
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(126): error C2143: syntax error: missing ';' before '<'
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(126): error C2433: 'basic_istream': 'inline' not permitted on data declarations
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(126): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(126): error C2374: 'std::basic_istream': redefinition; multiple initialization
+         c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(22): note: see declaration of 'std::basic_istream'
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(126): error C2059: syntax error: '<'
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(139): error C2143: syntax error: missing ';' before '{'
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(139): error C2447: '{': missing function header (old-style formal list?)
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(146): error C2988: unrecognizable template declaration/definition
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(146): error C2143: syntax error: missing ';' before '<'
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(146): error C2433: 'basic_istream': 'inline' not permitted on data declarations
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(146): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(146): error C2374: 'std::basic_istream': redefinition; multiple initialization
+         c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(22): note: see declaration of 'std::basic_istream'
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(146): error C2059: syntax error: '<'
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(160): error C2143: syntax error: missing ';' before '{'
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(160): error C2447: '{': missing function header (old-style formal list?)
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(167): error C2988: unrecognizable template declaration/definition
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(167): error C2143: syntax error: missing ';' before '<'
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(167): error C2433: 'basic_ostream': 'inline' not permitted on data declarations
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(167): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(167): error C2059: syntax error: '<'
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(219): error C2143: syntax error: missing ';' before '{'
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(219): error C2447: '{': missing function header (old-style formal list?)
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(234): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(234): error C2988: unrecognizable template declaration/definition
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(234): error C2143: syntax error: missing ',' before '&'
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(237): error C2065: '_Str': undeclared identifier
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(239): error C2065: 'errno': undeclared identifier
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(240): error C2065: '_Eptr': undeclared identifier
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(240): error C2065: '_Base': undeclared identifier
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(240): error C3861: 'strtol': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(242): error C2065: '_Eptr': undeclared identifier
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(243): error C3861: '_Xinvalid_argument': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(244): error C2065: 'errno': undeclared identifier
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(244): error C2065: 'ERANGE': undeclared identifier
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(245): error C3861: '_Xout_of_range': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(246): error C2065: '_Idx': undeclared identifier
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(247): error C2065: '_Idx': undeclared identifier
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(247): error C2065: '_Eptr': undeclared identifier
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(251): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(251): error C2988: unrecognizable template declaration/definition
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(251): error C2143: syntax error: missing ',' before '&'
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(254): error C2065: '_Str': undeclared identifier
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(256): error C2065: 'errno': undeclared identifier
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(257): error C2065: '_Eptr': undeclared identifier
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(257): error C2065: '_Base': undeclared identifier
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(257): error C3861: 'strtoul': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(259): error C2065: '_Eptr': undeclared identifier
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(260): error C3861: '_Xinvalid_argument': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(261): error C2065: 'errno': undeclared identifier
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(261): error C2065: 'ERANGE': undeclared identifier
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(262): error C3861: '_Xout_of_range': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(263): error C2065: '_Idx': undeclared identifier
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(264): error C2065: '_Idx': undeclared identifier
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(264): error C2065: '_Eptr': undeclared identifier
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(268): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(268): error C2988: unrecognizable template declaration/definition
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(268): error C2143: syntax error: missing ',' before '&'
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(271): error C2065: '_Str': undeclared identifier
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(273): error C2065: 'errno': undeclared identifier
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(274): error C2065: '_Eptr': undeclared identifier
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(274): error C2065: '_Base': undeclared identifier
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(274): error C3861: 'strtoll': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(276): error C2065: '_Eptr': undeclared identifier
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(277): error C3861: '_Xinvalid_argument': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(278): error C2065: 'errno': undeclared identifier
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(278): error C2065: 'ERANGE': undeclared identifier
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(279): error C3861: '_Xout_of_range': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(280): error C2065: '_Idx': undeclared identifier
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(281): error C2065: '_Idx': undeclared identifier
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(281): error C2065: '_Eptr': undeclared identifier
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(285): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(285): error C2988: unrecognizable template declaration/definition
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(285): error C2143: syntax error: missing ',' before '&'
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(288): error C2065: '_Str': undeclared identifier
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(290): error C2065: 'errno': undeclared identifier
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(291): error C2065: '_Eptr': undeclared identifier
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(291): error C2065: '_Base': undeclared identifier
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(291): error C3861: 'strtoull': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(293): error C2065: '_Eptr': undeclared identifier
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(294): error C3861: '_Xinvalid_argument': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(295): error C2065: 'errno': undeclared identifier
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(295): error C2065: 'ERANGE': undeclared identifier
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(296): error C3861: '_Xout_of_range': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(297): error C2065: '_Idx': undeclared identifier
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(298): error C2065: '_Idx': undeclared identifier
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(298): error C2065: '_Eptr': undeclared identifier
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(302): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(302): error C2988: unrecognizable template declaration/definition
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(302): error C2143: syntax error: missing ',' before '&'
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(304): error C2065: '_Str': undeclared identifier
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(306): error C2065: 'errno': undeclared identifier
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(307): error C2065: '_Eptr': undeclared identifier
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(307): error C3861: 'strtof': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(309): error C2065: '_Eptr': undeclared identifier
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(310): error C3861: '_Xinvalid_argument': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(311): error C2065: 'errno': undeclared identifier
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(311): error C2065: 'ERANGE': undeclared identifier
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(312): error C3861: '_Xout_of_range': identifier not found
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(313): error C2065: '_Idx': undeclared identifier
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(314): error C2065: '_Idx': undeclared identifier
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(314): error C2065: '_Eptr': undeclared identifier
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(318): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(318): error C2988: unrecognizable template declaration/definition
+     1>c:\program files (x86)\microsoft visual studio 14.0\vc\include\string(318): fatal error C1003: error count exceeds 100; stopping compilation
+     1>Done Building Project "C:\Users\anthony.touchet\Documents\GitHub\Poppit-and-Locket\Math\LibraryTest\test\test\test.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.09
