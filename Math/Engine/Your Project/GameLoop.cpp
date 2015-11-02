@@ -3,8 +3,12 @@
 SDL_Keycode keypress;
 System::Point2D<float> Position = { 800, 450 };
 int timer = 0;
-int alphaControl = 255;
+int alphaControl = 1;
 int speed = 25;
+
+bool bullet = false;
+float bullteTrav = Position.Y;
+int bullife = 25;
 
 void GameLoop::Loop()
 {
@@ -39,8 +43,11 @@ void GameLoop::Loop()
 
 void GameLoop::Update()
 {
-	timer += 1;
-	switch (keypress)
+	timer += 1;//Timmer
+
+	
+
+	switch (keypress)//Movement
 	{
 	case SDLK_DOWN:
 		Position.Y += speed;
@@ -56,24 +63,50 @@ void GameLoop::Update()
 
 	case SDLK_RIGHT:
 		Position.X += speed;
+		break;
 
 	case SDLK_0:
-		
+		bullet = true;
 		break;
 
 	default:
 		break;
 	}
 
-		if (timer % 240 == 0)
-		{
-			alphaControl = 0;
-		}
+	if (bullet == true && bullife > 0)//Bullet life
+	{
+		bullife -= 1;
+	}
 
-		else
-		{
-			alphaControl = timer % 240;
-		}
+	else
+	{
+		bullet = false;
+		bullteTrav = Position.Y;
+		bullife = 25;
+	}	
+	
+	int switcher = 0;
+
+	if (switcher == 0)//Timer Example
+	{
+		alphaControl += 1;
+	}
+
+	if (alphaControl == 255)
+	{
+		switcher = 1;
+	}
+
+	if (switcher == 1)
+	{
+		alphaControl -= 1;
+	}
+
+	if (alphaControl == 0)
+	{
+		switcher = 0;
+	}
+		
 }
 
 void GameLoop::LateUpdate()
@@ -89,6 +122,12 @@ void GameLoop::Draw()
 
 	Graphics::DrawCircle({100, 100}, 50, 50, { 255, 0, 255, alphaControl });
 	Graphics::DrawRect(Position, { 50, 50 }, { 0, 255, 255, 255 });
+
+	if (bullet == true)
+	{
+		Graphics::DrawLine({Position.X + 25, Position.Y}, { Position.X + 25, bullteTrav -= 10 }, { 255, 0, 0, 150 });
+	}
+	
 }
 
 void GameLoop::OnKeyDown(const SDL_Keycode ac_sdlSym , const Uint16 ac_uiMod, const SDL_Scancode ac_sdlScancode)
