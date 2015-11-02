@@ -1,13 +1,17 @@
-﻿Build started 10/28/2015 9:00:42 AM.
-     1>Project "C:\Users\anthony.touchet\Desktop\Math\MathLibrary\MathLibrary\MathLibrary.vcxproj" on node 2 (Rebuild target(s)).
+﻿Build started 11/2/2015 3:04:29 PM.
+     1>Project "C:\Users\anthony.touchet\Documents\GitHub\Poppit-and-Locket\Math\Math\MathLibrary\MathLibrary\MathLibrary.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\MathLibrary.pdb" /Gd /TP /analyze- /errorReport:prompt Source.cpp
          Source.cpp
+     1>c:\users\anthony.touchet\documents\github\poppit-and-locket\math\math\mathlibrary\mathlibrary\vecmath.h(86): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+         c:\users\anthony.touchet\documents\github\poppit-and-locket\math\math\mathlibrary\mathlibrary\vecmath.h(80): note: while compiling class template member function 'Vector<int> Vector<int>::operator /(Vector<int>)'
+         c:\users\anthony.touchet\documents\github\poppit-and-locket\math\math\mathlibrary\mathlibrary\source.cpp(19): note: see reference to function template instantiation 'Vector<int> Vector<int>::operator /(Vector<int>)' being compiled
+         c:\users\anthony.touchet\documents\github\poppit-and-locket\math\math\mathlibrary\mathlibrary\source.cpp(16): note: see reference to class template instantiation 'Vector<int>' being compiled
        Lib:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\Lib.exe /OUT:"C:\Users\anthony.touchet\Desktop\Math\MathLibrary\Debug\MathLibrary.lib" /NOLOGO Debug\Source.obj
-         MathLibrary.vcxproj -> C:\Users\anthony.touchet\Desktop\Math\MathLibrary\Debug\MathLibrary.lib
-     1>Done Building Project "C:\Users\anthony.touchet\Desktop\Math\MathLibrary\MathLibrary\MathLibrary.vcxproj" (Rebuild target(s)).
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\Lib.exe /OUT:"C:\Users\anthony.touchet\Documents\GitHub\Poppit-and-Locket\Math\Math\MathLibrary\Debug\MathLibrary.lib" /NOLOGO Debug\Source.obj
+         MathLibrary.vcxproj -> C:\Users\anthony.touchet\Documents\GitHub\Poppit-and-Locket\Math\Math\MathLibrary\Debug\MathLibrary.lib
+     1>Done Building Project "C:\Users\anthony.touchet\Documents\GitHub\Poppit-and-Locket\Math\Math\MathLibrary\MathLibrary\MathLibrary.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.62
+Time Elapsed 00:00:00.85

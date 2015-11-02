@@ -13,10 +13,10 @@ Math...
 
 int main() {
 
-	Vector<double> a(14, 5, -5);//Vector a
-	Vector<double> b(-2, 1, 43);//Vector b
+	Vector<int> a(14, 5, -5);//Vector a
+	Vector<int> b(-2, 1, 43);//Vector b
 
-	Vector<double> result = a / b;
+	Vector<int> result = a / b;
 
 	cout << result.x << ", " << result.y << ", " << result.z << endl;
 
