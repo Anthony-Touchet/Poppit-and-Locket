@@ -1,14 +1,18 @@
 #include "GameLoop.h"
 
-SDL_Keycode keypress;
 System::Point2D<float> Position = { 800, 450 };
 int timer = 0;
 int alphaControl = 1;
-int speed = 25;
 
-bool bullet = false;
-float bullteTrav = Position.Y;
-int bullife = 25;
+int speed = 25;// Box speed
+
+bool bullet = false;//is there a bullet on the screen
+float bulletTrav = Position.Y;
+int bullife = 80;
+
+bool hit = false;
+
+bool swittcher = false;
 
 void GameLoop::Loop()
 {
@@ -39,79 +43,54 @@ void GameLoop::Loop()
 	}
 }
 
-
-
 void GameLoop::Update()
 {
 	timer += 1;//Timmer
 
-	
-
-	switch (keypress)//Movement
-	{
-	case SDLK_DOWN:
-		Position.Y += speed;
-		break;
-
-	case SDLK_UP:
-		Position.Y -= speed;
-		break;
-
-	case SDLK_LEFT:
-		Position.X -= speed;
-		break;
-
-	case SDLK_RIGHT:
-		Position.X += speed;
-		break;
-
-	case SDLK_0:
-		bullet = true;
-		break;
-
-	default:
-		break;
-	}
-
-	if (bullet == true && bullife > 0)//Bullet life
+//Bullet
+	if (bullet == true && bullife > 0)//Bullet keeps going
 	{
 		bullife -= 1;
 	}
 
-	else
+	else//Bullet stops
 	{
 		bullet = false;
-		bullteTrav = Position.Y;
-		bullife = 25;
-	}	
-	
-	int switcher = 0;
+		bulletTrav = Position.Y;
+		bullife = 80;
+	}
 
-	if (switcher == 0)//Timer Example
+//Timer Example
+	if (swittcher == false)//fade in
 	{
 		alphaControl += 1;
 	}
-
-	if (alphaControl == 255)
-	{
-		switcher = 1;
-	}
-
-	if (switcher == 1)
+	
+	else if (swittcher == true)//fade out
 	{
 		alphaControl -= 1;
 	}
 
-	if (alphaControl == 0)
+	if (alphaControl == 255)//trigger to fade out
 	{
-		switcher = 0;
+		swittcher = true;
 	}
-		
+	
+	if (alphaControl == 0)//trigger to fade in
+	{
+		swittcher = false;
+	}
 }
 
 void GameLoop::LateUpdate()
 {
-	keypress = KMOD_NONE;
+//Bullet
+	if (Position.X + 25 == 800 && bulletTrav - 5 == 150 && bullet == true)//Bullet hits preset point
+	{
+		hit = true;
+		bullet = false;
+		printf("hit");
+	}
 }
 
 void GameLoop::Draw()
@@ -120,14 +99,20 @@ void GameLoop::Draw()
 	// just like a painter would paint onto a canvas
 	
 
-	Graphics::DrawCircle({100, 100}, 50, 50, { 255, 0, 255, alphaControl });
-	Graphics::DrawRect(Position, { 50, 50 }, { 0, 255, 255, 255 });
+	Graphics::DrawCircle({ 800, 100 }, 50, 50, {255, 0, 255, alphaControl});	//Timer Example
+	Graphics::DrawRect(Position, { 50, 50 }, { 0, 255, 255, 255 });				//Player
 
-	if (bullet == true)
+	if (bullet == true)//If the bullet has been shot
 	{
-		Graphics::DrawLine({Position.X + 25, Position.Y}, { Position.X + 25, bullteTrav -= 10 }, { 255, 0, 0, 150 });
+		Graphics::DrawRect({ Position.X + 25, bulletTrav -= 5 }, {3, 3}, { 255, 0, 0, 150 });	//Bullet
 	}
 	
+	if (hit == true)	//If bullet hits the point
+	{
+		Graphics::DrawCircle({ 100, 100 }, 50, 50, { 255, 0, 255, 255 });	//Confirmation Circle
+	}
+
+	hit = false;	//Reset hit to false
 }
 
 void GameLoop::OnKeyDown(const SDL_Keycode ac_sdlSym , const Uint16 ac_uiMod, const SDL_Scancode ac_sdlScancode)
@@ -137,7 +122,31 @@ void GameLoop::OnKeyDown(const SDL_Keycode ac_sdlSym , const Uint16 ac_uiMod, co
 	case SDLK_ESCAPE: m_bRunning = false; break; // End the loop
 
 	default:
-		keypress = ac_sdlSym;
+		switch (ac_sdlSym)	//Movement
+		{
+		case SDLK_KP_5:	//Down
+			Position.Y += speed;
+			break;
+
+		case SDLK_KP_8:	//Up
+			Position.Y -= speed;
+			break;
+
+		case SDLK_KP_4:	//Left
+			Position.X -= speed;
+			break;
+
+		case SDLK_KP_6:	//Right
+			Position.X += speed;
+			break;
+
+		case SDLK_w:	//Shoot up
+			bullet = true;
+			break;
+
+		default:
+			break;
+		}
 		printf("%s\n",SDL_GetKeyName(ac_sdlSym)); break;
 	}
 }

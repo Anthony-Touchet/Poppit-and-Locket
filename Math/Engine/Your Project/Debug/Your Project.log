@@ -1,10 +1,10 @@
-﻿Build started 11/2/2015 5:53:53 PM.
+﻿Build started 11/3/2015 12:32:07 PM.
      1>Project "C:\Users\anthony.touchet\Documents\GitHub\Poppit-and-Locket\Math\Engine\Your Project\Your Project.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I"C:\Users\anthony.touchet\Documents\GitHub\AIE_Framework-2015\Your Project\Dependencies\include" /I"C:\Users\anthony.touchet\Documents\GitHub\Poppit-and-Locket\Math\Engine\Your Project\\Dependencies\include\SDL" /I"C:\Users\anthony.touchet\Documents\GitHub\Poppit-and-Locket\Math\Engine\Your Project\\Dependencies\include\OpenGL" /I"C:\Users\anthony.touchet\Documents\GitHub\Poppit-and-Locket\Math\Engine\Your Project\\Dependencies\include\Graphics" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt GameLoop.cpp
          GameLoop.cpp
      1>c:\users\anthony.touchet\documents\github\poppit-and-locket\math\engine\your project\dependencies\include\graphics\graphics.h(352): warning C4244: 'argument': conversion from 'const int' to 'GLfloat', possible loss of data
-         c:\users\anthony.touchet\documents\github\poppit-and-locket\math\engine\your project\gameloop.cpp(123): note: see reference to function template instantiation 'void Graphics::DrawCircle<int>(const System::Point2D<int>,const T,const T,const System::Color<T> &)' being compiled
+         c:\users\anthony.touchet\documents\github\poppit-and-locket\math\engine\your project\gameloop.cpp(102): note: see reference to function template instantiation 'void Graphics::DrawCircle<int>(const System::Point2D<int>,const T,const T,const System::Color<T> &)' being compiled
                  with
                  [
                      T=int
@@ -12,9 +12,7 @@
      1>c:\users\anthony.touchet\documents\github\poppit-and-locket\math\engine\your project\dependencies\include\graphics\graphics.h(356): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
      1>c:\users\anthony.touchet\documents\github\poppit-and-locket\math\engine\your project\dependencies\include\graphics\graphics.h(357): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
      1>c:\users\anthony.touchet\documents\github\poppit-and-locket\math\engine\your project\dependencies\include\graphics\graphics.h(267): warning C4244: 'argument': conversion from 'const float' to 'GLubyte', possible loss of data
-         c:\users\anthony.touchet\documents\github\poppit-and-locket\math\engine\your project\gameloop.cpp(124): note: see reference to function template instantiation 'void Graphics::DrawRect<float>(const System::Point2D<float> &,const System::Size2D<float> &,const System::Color<float> &)' being compiled
-     1>c:\users\anthony.touchet\documents\github\poppit-and-locket\math\engine\your project\dependencies\include\graphics\graphics.h(293): warning C4244: 'argument': conversion from 'const float' to 'GLubyte', possible loss of data
-         c:\users\anthony.touchet\documents\github\poppit-and-locket\math\engine\your project\gameloop.cpp(128): note: see reference to function template instantiation 'void Graphics::DrawLine<float>(const System::Point2D<float> &,const System::Point2D<float> &,const System::Color<float> &)' being compiled
+         c:\users\anthony.touchet\documents\github\poppit-and-locket\math\engine\your project\gameloop.cpp(103): note: see reference to function template instantiation 'void Graphics::DrawRect<float>(const System::Point2D<float> &,const System::Size2D<float> &,const System::Color<float> &)' being compiled
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\anthony.touchet\Documents\GitHub\Poppit-and-Locket\Math\Engine\Debug\Your Project.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\anthony.touchet\Documents\GitHub\Poppit-and-Locket\Math\Engine\Your Project\\Dependencies\lib" /LIBPATH:"C:\Users\anthony.touchet\Documents\GitHub\Poppit-and-Locket\Math\Engine\Your Project\\Dependencies\lib\SDL" /LIBPATH:"C:\Users\anthony.touchet\Documents\GitHub\Poppit-and-Locket\Math\Engine\Your Project\\Dependencies\lib\OpenGL" "SDL-OpenGL Student Library.lib" MathLibrary.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\anthony.touchet\Documents\GitHub\Poppit-and-Locket\Math\Engine\Debug\Your Project.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\anthony.touchet\Documents\GitHub\Poppit-and-Locket\Math\Engine\Debug\Your Project.lib" /MACHINE:X86 Debug\GameLoop.obj
          Debug\Source.obj
@@ -23,4 +21,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.98
+Time Elapsed 00:00:01.20
