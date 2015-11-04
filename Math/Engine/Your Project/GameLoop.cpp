@@ -14,6 +14,11 @@ bool hit = false;
 
 bool swittcher = false;
 
+Vector<int> a (1,1);
+Vector<int> b (2, 2);
+
+Vector<int> c = a + b;
+
 void GameLoop::Loop()
 {
 	while (m_bRunning)
@@ -84,8 +89,8 @@ void GameLoop::Update()
 
 void GameLoop::LateUpdate()
 {
-//Bullet
-	if (Position.X + 25 == 800 && bulletTrav - 5 == 150 && bullet == true)//Bullet hits preset point
+//Bullet Hit
+	if (Position.X + 25 == 800 && bulletTrav - 5 == 150 && bullet == true || Position.X + 25 == 750 && bulletTrav - 5 == 100 && bullet == true || Position.X + 25 == 850 && bulletTrav - 5 == 100 && bullet == true)//Bullet hits preset point
 	{
 		hit = true;
 		bullet = false;
@@ -97,7 +102,6 @@ void GameLoop::Draw()
 {
 	// Objects are drawn in a painter's layer fashion meaning the first object drawn is on the bottom, and the last one drawn is on the top
 	// just like a painter would paint onto a canvas
-	
 
 	Graphics::DrawCircle({ 800, 100 }, 50, 50, {255, 0, 255, alphaControl});	//Timer Example
 	Graphics::DrawRect(Position, { 50, 50 }, { 0, 255, 255, 255 });				//Player
@@ -110,9 +114,11 @@ void GameLoop::Draw()
 	if (hit == true)	//If bullet hits the point
 	{
 		Graphics::DrawCircle({ 100, 100 }, 50, 50, { 255, 0, 255, 255 });	//Confirmation Circle
+		if (timer % 60 == 0)
+		{
+			hit = false;	//Reset hit to false
+		}
 	}
-
-	hit = false;	//Reset hit to false
 }
 
 void GameLoop::OnKeyDown(const SDL_Keycode ac_sdlSym , const Uint16 ac_uiMod, const SDL_Scancode ac_sdlScancode)
@@ -144,10 +150,14 @@ void GameLoop::OnKeyDown(const SDL_Keycode ac_sdlSym , const Uint16 ac_uiMod, co
 			bullet = true;
 			break;
 
+		case SDLK_v:
+			c.Print();
+			break;
+
 		default:
 			break;
 		}
-		printf("%s\n",SDL_GetKeyName(ac_sdlSym)); break;
+		printf("%s\n",SDL_GetKeyName(ac_sdlSym)); break;//Prints Keystroke to other console window.
 	}
 }
 
