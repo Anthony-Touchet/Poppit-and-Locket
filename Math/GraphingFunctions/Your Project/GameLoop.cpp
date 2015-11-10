@@ -1,6 +1,9 @@
 #include "GameLoop.h"
 #include <ctime>
 
+Vector<float> GetNumber();
+Vector<float>(*Graph)() = &GetNumber;
+
 void GameLoop::Loop()
 {
 	while (m_bRunning)
@@ -29,27 +32,43 @@ void GameLoop::Loop()
 
 void GameLoop::Draw()
 {
-	Graphics::DrawLine({ 25, 450 }, {1600, 450}, {255, 0, 0, 255});// X Axis
-	Graphics::DrawLine({ 25, 900 }, { 25, 0 }, { 255, 0, 0, 255 });//Y Axis
+	Graphics::DrawLine({ 25, 875 }, {1600, 875}, {255, 0, 0, 255});// X Axis
+	Graphics::DrawLine({ 25, 875 }, { 25, 0 }, { 255, 0, 0, 255 });//Y Axis
 	
 	//X Increments
 	float x = 25;
 	for (int i = 0; i < 32; i++)
 	{
 		x += 50;
-		Graphics::DrawLine({x , 440 }, { x, 460 }, { 0, 0, 255, 255 });
+		Graphics::DrawLine({x , 865 }, { x, 885 }, { 0, 0, 255, 255 });
 	}
 
 	//Y increments
-	float y = 0;
+	float y = 875;
 	for (int i = 0; i < 32; i++)
 	{
-		y += 50;
-		if (y != 450)
-		{
-			Graphics::DrawLine({ 15, y }, { 35, y }, { 0, 0, 255, 255 });
-		}
+		y -= 50;
+		Graphics::DrawLine({ 15, y }, { 35, y }, { 0, 0, 255, 255 });
 	}
+
+	//Test Function
+	float incx, incy;
+	Vector<float> inc(Graph());		//Incrementing Variables
+	float f1x, f1y;					//Function's start point
+
+	//Function manipulation
+
+	f1x = 25;			//Start Position X
+	f1y = 875;			//Start Position Y
+	inc.y *= -1;		//To go up in this program you need to decrement y. in actual graphing you increase y. This is here to convert from engine to actual graphing.
+
+	for (int w = 0; w < 5; w++)
+	{
+		Graphics::DrawLine({ f1x, f1y }, { f1x + (inc.x * 5), f1y + (inc.y * 5) }, { 0, 0, 255, 255 });
+		f1x = f1x + (inc.x * 5);
+		f1y = f1y + (inc.y * 5);
+	}
+
 }
 
 void GameLoop::OnKeyDown(const SDL_Keycode ac_sdlSym , const Uint16 ac_uiMod, const SDL_Scancode ac_sdlScancode)
@@ -61,9 +80,6 @@ void GameLoop::OnKeyDown(const SDL_Keycode ac_sdlSym , const Uint16 ac_uiMod, co
 	default:
 		switch (ac_sdlSym)	//Movement
 		{
-		case SDLK_t:
-			
-
 		default:
 			break;
 		}
@@ -91,4 +107,14 @@ GameLoop::GameLoop()
 GameLoop::~GameLoop()
 {
 
+}
+
+Vector<float> GetNumber()
+{
+	Vector<float> N(0, 0);
+	cout << "Please Enter a X increment.\n";
+	cin >> N.x;
+	cout << "Please Enter a Y increment.\n";
+	cin >> N.y;
+	return N;
 }
