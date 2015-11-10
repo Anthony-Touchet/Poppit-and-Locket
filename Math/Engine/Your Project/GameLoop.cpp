@@ -1,7 +1,12 @@
 #include "GameLoop.h"
+#include <ctime>
 
 System::Point2D<float> Position = { 800, 450 };
 int timer = 0;
+float currentTime = 0;
+float previousTime = 0;
+float deltaTime = 0;
+
 int alphaControl = 1;
 
 int speed = 25;// Box speed
@@ -9,6 +14,7 @@ int speed = 25;// Box speed
 bool bullet = false;//is there a bullet on the screen
 float bulletTrav = Position.Y;
 int bullife = 80;
+float bullpos = Position.X;
 
 bool hit = false;
 
@@ -37,11 +43,19 @@ void GameLoop::Loop()
 				// and its syntax
 				OnEvent(sdlEvent);
 			}
+
+			float div = 1000;
+			float ct = clock();
+			currentTime = (float) ct / div;
+			deltaTime = currentTime - previousTime;
+
 			Update();
 
 			LateUpdate();
 
 			Draw();
+
+			previousTime = currentTime;
 
 			Graphics::Flip(); // Required to update the window with all the newly drawn content
 		}
@@ -90,7 +104,7 @@ void GameLoop::Update()
 void GameLoop::LateUpdate()
 {
 //Bullet Hit
-	if (Position.X + 25 == 800 && bulletTrav - 5 == 150 && bullet == true || Position.X + 25 == 750 && bulletTrav - 5 == 100 && bullet == true || Position.X + 25 == 850 && bulletTrav - 5 == 100 && bullet == true)//Bullet hits preset point
+	if (bullpos + 25 == 800 && bulletTrav - 5 == 150 && bullet == true || bullpos + 25 == 750 && bulletTrav - 5 == 100 && bullet == true || bullpos + 25 == 850 && bulletTrav - 5 == 100 && bullet == true)//Bullet hits preset point
 	{
 		hit = true;
 		bullet = false;
@@ -108,7 +122,7 @@ void GameLoop::Draw()
 
 	if (bullet == true)//If the bullet has been shot
 	{
-		Graphics::DrawRect({ Position.X + 25, bulletTrav -= 5 }, {3, 3}, { 255, 0, 0, 150 });	//Bullet
+		Graphics::DrawRect({ bullpos + 12, bulletTrav -= 5 }, {3, 3}, { 255, 0, 0, 150 });	//Bullet
 	}
 	
 	if (hit == true)	//If bullet hits the point
@@ -153,6 +167,9 @@ void GameLoop::OnKeyDown(const SDL_Keycode ac_sdlSym , const Uint16 ac_uiMod, co
 		case SDLK_v:
 			c.Print();
 			break;
+
+		case SDLK_t:
+			cout << currentTime << "\n" << previousTime << "\n" << deltaTime << endl;
 
 		default:
 			break;
