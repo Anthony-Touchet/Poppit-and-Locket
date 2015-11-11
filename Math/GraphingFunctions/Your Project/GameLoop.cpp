@@ -3,6 +3,7 @@
 
 Vector<float> GetNumber();
 Vector<float>(*Graph)() = &GetNumber;
+int functionNum = 1;
 
 void GameLoop::Loop()
 {
@@ -40,7 +41,7 @@ void GameLoop::Draw()
 	for (int i = 0; i < 32; i++)
 	{
 		x += 50;
-		Graphics::DrawLine({x , 865 }, { x, 885 }, { 0, 0, 255, 255 });
+		Graphics::DrawLine({x , 875 }, { x, 0 }, { 0, 0, 255, 255 });
 	}
 
 	//Y increments
@@ -48,7 +49,7 @@ void GameLoop::Draw()
 	for (int i = 0; i < 32; i++)
 	{
 		y -= 50;
-		Graphics::DrawLine({ 15, y }, { 35, y }, { 0, 0, 255, 255 });
+		Graphics::DrawLine({ 25, y }, { 1600, y }, { 0, 0, 255, 255 });
 	}
 
 	//Test Function
@@ -64,9 +65,9 @@ void GameLoop::Draw()
 
 	for (int w = 0; w < 5; w++)
 	{
-		Graphics::DrawLine({ f1x, f1y }, { f1x + (inc.x * 5), f1y + (inc.y * 5) }, { 0, 0, 255, 255 });
-		f1x = f1x + (inc.x * 5);
-		f1y = f1y + (inc.y * 5);
+		Graphics::DrawLine({ f1x, f1y }, { f1x + (inc.x * 5), f1y + (inc.y * 5) }, { 0, 255, 0, 255 });
+		f1x = f1x + (inc.x * 2);
+		f1y = f1y + (inc.y * 2);
 	}
 
 }
@@ -112,9 +113,10 @@ GameLoop::~GameLoop()
 Vector<float> GetNumber()
 {
 	Vector<float> N(0, 0);
-	cout << "Please Enter a X increment.\n";
+	cout << "Please Enter a X increment for function " << functionNum << ".\n";
 	cin >> N.x;
-	cout << "Please Enter a Y increment.\n";
+	cout << "Please Enter a Y increment for function " << functionNum << ".\n";
 	cin >> N.y;
+	functionNum++;
 	return N;
 }
