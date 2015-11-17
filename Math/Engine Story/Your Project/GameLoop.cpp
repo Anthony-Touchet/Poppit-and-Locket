@@ -1,7 +1,7 @@
 #include "GameLoop.h"
 #include <ctime>
 
-System::Point2D<int> Position = { 50, 400 };
+Vector<int> Position = { 50, 400 };
 System::Color<int> OutterMan = { 0.0, 0.0, 255.0, 255.0 };
 System::Color<int> Hearts = { 0, 0, 255, 255 };
 bool inner = true;
@@ -17,16 +17,9 @@ float deltaTime = 0;
 
 int alphaControl = 255;
 
-int speed = 25;// Box speed
-
 bool heartr = false;
 bool heartb = true;
 bool heartg = false;
-
-Vector<int> a (1,1);
-Vector<int> b (2, 2);
-
-Vector<int> c = a + b;
 
 void GameLoop::Loop()
 {
@@ -39,13 +32,6 @@ void GameLoop::Loop()
 			// Events get called one at a time, so if multiple things happen in one frame, they get parsed individually through 'SDL_PollEvent'
 			// The next event to parse gets stored into 'sdlEvent', and then passed to the 'EventHandler' class which will call it's appropriate function here
 			// 'SDL_PollEvent' returns 0 when there are no more events to parse
-			while (SDL_PollEvent(&sdlEvent))
-			{
-				// Calls the redefined event function for the EventHandler class
-				// Refer to its header file and cpp for more information on what each inherited function is capable of
-				// and its syntax
-				OnEvent(sdlEvent);
-			}
 
 			float div = 1000;
 			float ct = clock();
@@ -115,21 +101,21 @@ void GameLoop::Loop()
 				heartg == true;
 			}
 
-			if (Position.X != 1100)//Not at Girl yet
+			if (Position.x != 1100)//Not at Girl yet
 			{
 				if (ties2 == false && ties3 == false)//tie 1
 				{
-					(Position.X += 5) * deltaTime;
+					(Position.x += 5) * deltaTime;
 				}
 
 				if (ties2 == true && ties3 == false)// tie 2
 				{
-					(Position.X += 2) * deltaTime;
+					(Position.x += 2) * deltaTime;
 				}
 
 				if (ties2 == true && ties3 == true)//tie 3
 				{
-					(Position.X += 1) * deltaTime;
+					(Position.x += 1) * deltaTime;
 				}
 
 				if (OutterMan.Blue != 0)//Outter layer fade 
@@ -146,18 +132,18 @@ void GameLoop::Loop()
 					}
 				}
 
-				if (Position.X == 300)//tie 2 trigger
+				if (Position.x == 300)//tie 2 trigger
 				{
 					ties2 = true;
 				}
 
-				if (Position.X == 600)//tie 3 trigger
+				if (Position.x == 600)//tie 3 trigger
 				{
 					ties3 = true;
 				}
 			}
 
-			if (Position.X == 1100)//At woman
+			if (Position.x == 1100)//At woman
 			{
 				alphaControl = 0;
 				ties1 = false;
@@ -165,13 +151,13 @@ void GameLoop::Loop()
 				ties3 = false;
 			}
 
-			if (Position.X == 1100 && currentTime % 5 == 0)//Becomes full man
+			if (Position.x == 1100 && currentTime % 5 == 0)//Becomes full man
 			{
 				OutterMan = { 0, 0, 255, 255 };
 				inner = false;
 			}
 
-			if (Position.X == 1100 && inner == false)//fireworks
+			if (Position.x == 1100 && inner == false)//fireworks
 			{
 				if (fireworks == false)
 				{
@@ -184,7 +170,7 @@ void GameLoop::Loop()
 				}
 			}
 
-			if (Position.X == 1100 && currentTime % 9 == 0)//two become one
+			if (Position.x == 1100 && currentTime % 9 == 0)//two become one
 			{
 				together = true;
 			}
@@ -207,10 +193,10 @@ void GameLoop::Draw()
 {
 	if (together == false)
 	{
-		Graphics::DrawCircle(Position, 50, 50, OutterMan);	//Outer Man
+		Graphics::DrawCircle({ Position.x, Position.y }, 50, 50, OutterMan);	//Outer Man
 		if (inner == true)
 		{
-			Graphics::DrawCircle(Position, 25, 25, { 0, 0, 255, 255 });//Inner Man
+			Graphics::DrawCircle({ Position.x, Position.y }, 25, 25, { 0, 0, 255, 255 });//Inner Man
 		}
 		Graphics::DrawCircle({ 1200, 400 }, 50, 50, { 255, 0, 255, 200 });//Woman
 		
@@ -226,20 +212,20 @@ void GameLoop::Draw()
 
 		if (ties1 == true)//Shots
 		{
-			Graphics::DrawLine({ 150, 250 }, Position, Hearts);
-			Graphics::DrawLine({ 150, 550 }, Position, Hearts);
+			Graphics::DrawLine({ 150, 250 }, { Position.x, Position.y }, Hearts);
+			Graphics::DrawLine({ 150, 550 }, { Position.x, Position.y }, Hearts);
 		}
 
 		if (ties2 == true)
 		{
-			Graphics::DrawLine({ 450, 250 }, Position, Hearts);
-			Graphics::DrawLine({ 450, 550 }, Position, Hearts);
+			Graphics::DrawLine({ 450, 250 }, { Position.x, Position.y }, Hearts);
+			Graphics::DrawLine({ 450, 550 }, { Position.x, Position.y }, Hearts);
 		}
 
 		if (ties3 == true)
 		{
-			Graphics::DrawLine({ 750, 250 }, Position, Hearts);
-			Graphics::DrawLine({ 750, 550 }, Position, Hearts);
+			Graphics::DrawLine({ 750, 250 }, { Position.x, Position.y }, Hearts);
+			Graphics::DrawLine({ 750, 550 }, { Position.x, Position.y }, Hearts);
 		}
 	}
 

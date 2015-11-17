@@ -8,30 +8,22 @@ bool move1Down = false;
 bool move2Up = false;
 bool move2Down = false;
 
-Vector<float> Ball(790, 440);		// Ball position
+Vector<int> Ball(800, 440);		// Ball position
 bool ballMove = true;			//Which Way the ball moves
-Vector<float> ballSpeed(2, 0);
-Vector<int> ballSize(20, 20);
-int ballMid = (ballSize.x + ballSize.y) / 2;
+Vector<int> ballSpeed(4, 0);
+Vector<float> ballSize(20, 20);
+int ballMid = ballSize.x / 2;
 
 int PlayOneScore = 0;
+int powerUp1 = 0;
+bool drop1 = true;
+
 int PlayTwoScore = 0;
+int powerUp2 = 0;
 
-bool p1Linestor = false;
-bool p1Line = false;
-
-System::Color<float> p1 = {0, 0, 255, 0};
-
-bool p2Linestor = false;
-bool p2Line = false;
-System::Color<float> p2 = { 0, 0, 255, 0 };
-
-int currentTime = 0;
+float currentTime = 0;
 float previousTime = 0;
 float deltaTime = 0;
-
-float timmer;
-float timmer1;
 
 void GameLoop::Loop()
 {
@@ -70,7 +62,7 @@ void GameLoop::Loop()
 
 void GameLoop::Update()
 {
-//Moving Players
+	//Moving Players
 	if (move1Down == true)
 	{
 		PlayMove.x += 5;
@@ -91,7 +83,7 @@ void GameLoop::Update()
 		PlayMove.y -= 5;
 	}
 
-//Ball
+	//Ball
 	if (ballMove == true)
 	{
 		Ball = Ball - ballSpeed;
@@ -107,15 +99,15 @@ void GameLoop::Update()
 		ballSpeed = { ballSpeed.x, -(ballSpeed.y) };
 	}
 
-	if (Ball.x + ballMid == 1600)
+	if (Ball.x + ballMid >= 1600) //Player one scores
 	{
 		PlayOneScore++;
 		ballMove = true;
 		ballSpeed = { 4, 0 };
-		Ball = {990, 440};
+		Ball = { 1000, 440 };
 	}
 
-	if (Ball.x + ballMid == 0)
+	if (Ball.x + ballMid <= 0) //Player two scores
 	{
 		PlayTwoScore++;
 		ballMove = false;
@@ -123,17 +115,18 @@ void GameLoop::Update()
 		Ball = { 340, 440 };
 	}
 
-//Player one bounce
-	if(Ball.x - ballMid == 10 && Ball.y > PlayMove.x && Ball.y < PlayMove.x + 100)
+	//Player one bounce
+	if (Ball.x - ballMid <= 30 && Ball.x - ballMid >= 20 && Ball.y > PlayMove.x && Ball.y < PlayMove.x + 100)
 	{
 		ballMove = false;
+
 		if (Ball.y + ballMid <= PlayMove.x + 25)
 		{
 			if (ballSpeed.x == 2 && ballSpeed.y == 2)
 			{
-				ballSpeed = {2, -2}; 
+				ballSpeed = { 2, -2 };
 			}
-			
+
 			else
 			{
 				ballSpeed = { 2,2 };
@@ -142,10 +135,10 @@ void GameLoop::Update()
 
 		else if (Ball.y + ballMid <= PlayMove.x + 26 && Ball.y + ballMid <= PlayMove.x + 75)
 		{
-			ballSpeed = {5, 0};
+			ballSpeed = { 5, 0 };
 		}
 
-		else if (Ball.y + ballMid <= PlayMove.x + 100 )
+		else if (Ball.y + ballMid <= PlayMove.x + 100)
 		{
 			if (ballSpeed.x == 2 && ballSpeed.y == 2)
 			{
@@ -164,31 +157,21 @@ void GameLoop::Update()
 		PlayMove.x = 0;
 	}
 
-	if (PlayMove.x + 100 > 1600)
+	if (PlayMove.x + 100 >= 900)
 	{
-		PlayMove.x = 1600;
+		PlayMove.x = 800;
 	}
 
-	if (currentTime % 30 == 0 && p1Linestor == false)
+	if (powerUp1 != 0)
 	{
-		p1Linestor = true;
-	}
-
-	if (p1Line == true)
-	{
-		p1.Alpha = 255;
-		if (ballMove == true)
+		/*if (currentTime % 7 == 0)
 		{
-			ballMove = false;
-		}
-		ballSpeed = { 10, 0 };
-		timmer1 = currentTime;
-		p1.Alpha = 0;
-		p1Line = false;
+			drop1 = true;
+		}*/
 	}
 
-// Player2 bounce
-	if (Ball.x + ballMid == 1570 && Ball.y + 20 > PlayMove.y && Ball.y < PlayMove.y + 100)
+	// Player2 bounce
+	if (Ball.x + ballMid >= 1570 && Ball.x + ballMid <= 1580 && Ball.y + 20 > PlayMove.y && Ball.y < PlayMove.y + 100)
 	{
 		ballMove = true;
 		if (Ball.y + ballMid <= PlayMove.y + 25)
@@ -228,50 +211,82 @@ void GameLoop::Update()
 		PlayMove.y = 0;
 	}
 
-	if (PlayMove.y + 100 > 1600)
+	if (PlayMove.y + 100 >= 900)
 	{
-		PlayMove.y = 1600;
-	}
-
-	if (currentTime % 30 == 0 && p2Linestor == false)
-	{
-		p2Linestor = true;
-	}
-
-	if (p2Line == true)
-	{
-		p2.Alpha = 255;
-		if (ballMove == false)
-		{
-			ballMove = true;
-		}
-		ballSpeed = {ballSpeed.x + 1 , ballSpeed.y};
-
-	}
-
-	if (currentTime == timmer + .5)
-	{
-		p2Line = false;
+		PlayMove.y = 800;
 	}
 }
 
 void GameLoop::LateUpdate()
 {
-	
+
 }
 
 void GameLoop::Draw()
 {
+	Graphics::DrawLine({ 800, 0 }, { 800, 900 }, {255, 0, 0, 255});	//Boundry
+	Graphics::DrawCircle({ Ball.x, Ball.y },  20, 20 , { 0, 255, 255, 255 });			//Ball
+
 	Graphics::DrawRect({ 20, PlayMove.x }, { 10, 100 }, { 255, 255, 255, 255 });	//Player 1
+	if (drop1 == true)
+	{
+		Graphics::DrawCircle({ 200, 50 }, 20, 20, { 0, 255, 255, 255 });
+	}
+
 	Graphics::DrawRect({ 1570, PlayMove.y }, { 10, 100 }, { 255, 255, 255, 255 });	//Player 2
 
-	Graphics::DrawRect({ Ball.x, Ball.y }, {20, 20}, { 0, 255, 255, 255 });			//Ball
+	//Points
+	if (PlayOneScore < 10)
+	{
+		switch (PlayOneScore)
+		{
+		case 1:
+			Graphics::DrawRect({ 395, 10 }, { 10, 100 }, { 255, 255, 255, 255 });	//1
+			break;
 
-	Graphics::DrawLine({ 30, PlayMove.x + 50 }, { Ball.x + ballMid, Ball.y + 10 }, p1);	//Player One's Lazer
-	Graphics::DrawLine({ 1570, PlayMove.y + 50 }, { Ball.x + ballMid, Ball.y + 10 }, p2);	//Player Two's Lazer
+		case 2:
+			Graphics::DrawRect({ 395, 10 }, { 50, 10 }, { 255, 255, 255, 255 });	//2
+			Graphics::DrawRect({ 445, 10 }, { 10, 40 }, { 255, 255, 255, 255 });
+			Graphics::DrawRect({ 395, 50 }, { 60, 10 }, { 255, 255, 255, 255 });
+			Graphics::DrawRect({ 395, 50 }, { 10, 40 }, { 255, 255, 255, 255 });
+			Graphics::DrawRect({ 395, 90 }, { 60, 10 }, { 255, 255, 255, 255 });
+			break;
+
+		case 3:
+			Graphics::DrawRect({ 395, 10 }, { 50, 10 }, { 255, 255, 255, 255 });	//3
+			Graphics::DrawRect({ 445, 10 }, { 10, 100 }, { 255, 255, 255, 255 });
+			Graphics::DrawRect({ 395, 55 }, { 50, 10 }, { 255, 255, 255, 255 });
+			Graphics::DrawRect({ 395, 100 }, { 50, 10 }, { 255, 255, 255, 255 });
+			break;
+
+		case 4:
+			Graphics::DrawRect({ 395, 55 }, { 50, 10 }, { 255, 255, 255, 255 });			//4
+			Graphics::DrawRect({ 445, 10 }, { 10, 100 }, { 255, 255, 255, 255 });
+			Graphics::DrawRect({ 395, 10 }, { 10, 50 }, { 255, 255, 255, 255 });
+			break;
+
+		case 5:
+			Graphics::DrawRect({ 405, 10 }, { 50, 10 }, { 255, 255, 255, 255 });	//5
+			Graphics::DrawRect({ 395, 10 }, { 10, 40 }, { 255, 255, 255, 255 });
+			Graphics::DrawRect({ 395, 50 }, { 60, 10 }, { 255, 255, 255, 255 });
+			Graphics::DrawRect({ 445, 50 }, { 10, 40 }, { 255, 255, 255, 255 });
+			Graphics::DrawRect({ 395, 90 }, { 60, 10 }, { 255, 255, 255, 255 });
+			break;
+
+		case 6:
+			Graphics::DrawRect({ 345, 10 }, { 10, 100 }, { 255, 255, 255, 255 });	//6
+			Graphics::DrawRect({ 355, 100 }, { 50, 10 }, { 255, 255, 255, 255 });
+			Graphics::DrawRect({ 355, 55 }, { 50, 10 }, { 255, 255, 255, 255 });
+			Graphics::DrawRect({ 405, 55 }, { 10, 55 }, { 255, 255, 255, 255 });
+			break;
+
+		case 7:
+			break;
+		}
+	}
 }
 
-void GameLoop::OnKeyDown(const SDL_Keycode ac_sdlSym , const Uint16 ac_uiMod, const SDL_Scancode ac_sdlScancode)
+void GameLoop::OnKeyDown(const SDL_Keycode ac_sdlSym, const Uint16 ac_uiMod, const SDL_Scancode ac_sdlScancode)
 {
 	switch (ac_sdlSym)
 	{
@@ -297,23 +312,35 @@ void GameLoop::OnKeyDown(const SDL_Keycode ac_sdlSym , const Uint16 ac_uiMod, co
 			break;
 
 		case SDLK_d:
-			if (p1Linestor == true)
+			if (drop1 == true)
 			{
-				p1Line = true;
+				Vector<int> old = ballSpeed;
+				ballSpeed = { 0, -10 };
+				if (currentTime - .1 <= previousTime)
+				{
+					drop1 = false;
+					ballSpeed = old;
+				}
 			}
 			break;
 
 		case SDLK_LEFT:
-			if (p1Linestor == true)
+			if (drop1 == true)
 			{
-				p2Line = true;
+				Vector<int> old = ballSpeed;
+				ballSpeed = { 0, 10 };
+				if (currentTime % 5 += previousTime )
+				{
+					drop1 = false;
+					ballSpeed = old;
+				}
 			}
 			break;
 
 		default:
 			break;
 		}
-		printf("%s\n",SDL_GetKeyName(ac_sdlSym)); break;//Prints Keystroke to other console window.
+		printf("%s\n", SDL_GetKeyName(ac_sdlSym)); break;//Prints Keystroke to other console window.
 	}
 }
 

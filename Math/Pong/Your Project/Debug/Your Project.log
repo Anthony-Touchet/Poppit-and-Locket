@@ -1,0 +1,29 @@
+﻿Build started 11/17/2015 2:49:08 PM.
+     1>Project "C:\Users\anthony.touchet\Documents\GitHub\Poppit-and-Locket\Math\pong\Your Project\Your Project.vcxproj" on node 2 (Build target(s)).
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (Story.vcxproj, Your Project.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I"C:\Users\anthony.touchet\Documents\GitHub\AIE_Framework-2015\Your Project\Dependencies\include" /I"C:\Users\anthony.touchet\Documents\GitHub\Poppit-and-Locket\Math\pong\Your Project\\Dependencies\include\SDL" /I"C:\Users\anthony.touchet\Documents\GitHub\Poppit-and-Locket\Math\pong\Your Project\\Dependencies\include\OpenGL" /I"C:\Users\anthony.touchet\Documents\GitHub\Poppit-and-Locket\Math\pong\Your Project\\Dependencies\include\Graphics" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt GameLoop.cpp
+         GameLoop.cpp
+     1>c:\users\anthony.touchet\documents\github\poppit-and-locket\math\pong\your project\gameloop.cpp(15): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+     1>c:\users\anthony.touchet\documents\github\poppit-and-locket\math\pong\your project\gameloop.cpp(48): warning C4244: 'initializing': conversion from 'clock_t' to 'float', possible loss of data
+     1>c:\users\anthony.touchet\documents\github\poppit-and-locket\math\pong\your project\dependencies\include\graphics\graphics.h(293): warning C4244: 'argument': conversion from 'const float' to 'GLubyte', possible loss of data
+         c:\users\anthony.touchet\documents\github\poppit-and-locket\math\pong\your project\gameloop.cpp(227): note: see reference to function template instantiation 'void Graphics::DrawLine<float>(const System::Point2D<float> &,const System::Point2D<float> &,const System::Color<float> &)' being compiled
+     1>c:\users\anthony.touchet\documents\github\poppit-and-locket\math\pong\your project\dependencies\include\graphics\graphics.h(352): warning C4244: 'argument': conversion from 'const int' to 'GLfloat', possible loss of data
+         c:\users\anthony.touchet\documents\github\poppit-and-locket\math\pong\your project\gameloop.cpp(228): note: see reference to function template instantiation 'void Graphics::DrawCircle<int>(const System::Point2D<int>,const T,const T,const System::Color<T> &)' being compiled
+                 with
+                 [
+                     T=int
+                 ]
+     1>c:\users\anthony.touchet\documents\github\poppit-and-locket\math\pong\your project\dependencies\include\graphics\graphics.h(356): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+     1>c:\users\anthony.touchet\documents\github\poppit-and-locket\math\pong\your project\dependencies\include\graphics\graphics.h(357): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+     1>c:\users\anthony.touchet\documents\github\poppit-and-locket\math\pong\your project\dependencies\include\graphics\graphics.h(267): warning C4244: 'argument': conversion from 'const float' to 'GLubyte', possible loss of data
+         c:\users\anthony.touchet\documents\github\poppit-and-locket\math\pong\your project\gameloop.cpp(230): note: see reference to function template instantiation 'void Graphics::DrawRect<float>(const System::Point2D<float> &,const System::Size2D<float> &,const System::Color<float> &)' being compiled
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\anthony.touchet\Documents\GitHub\Poppit-and-Locket\Math\pong\Debug\Pong.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\anthony.touchet\Documents\GitHub\Poppit-and-Locket\Math\pong\Your Project\\Dependencies\lib" /LIBPATH:"C:\Users\anthony.touchet\Documents\GitHub\Poppit-and-Locket\Math\pong\Your Project\\Dependencies\lib\SDL" /LIBPATH:"C:\Users\anthony.touchet\Documents\GitHub\Poppit-and-Locket\Math\pong\Your Project\\Dependencies\lib\OpenGL" "SDL-OpenGL Student Library.lib" MathLibrary.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\anthony.touchet\Documents\GitHub\Poppit-and-Locket\Math\pong\Debug\Pong.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\anthony.touchet\Documents\GitHub\Poppit-and-Locket\Math\pong\Debug\Pong.lib" /MACHINE:X86 Debug\GameLoop.obj
+         Debug\Source.obj
+         Your Project.vcxproj -> C:\Users\anthony.touchet\Documents\GitHub\Poppit-and-Locket\Math\pong\Debug\Pong.exe
+     1>Done Building Project "C:\Users\anthony.touchet\Documents\GitHub\Poppit-and-Locket\Math\pong\Your Project\Your Project.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.94

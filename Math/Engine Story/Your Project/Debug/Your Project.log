@@ -1,4 +1,4 @@
-﻿Build started 11/9/2015 4:56:14 PM.
+﻿Build started 11/17/2015 11:43:47 AM.
      1>Project "C:\Users\anthony.touchet\Documents\GitHub\Poppit-and-Locket\Math\Engine Story\Your Project\Your Project.vcxproj" on node 2 (Build target(s)).
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (Your Project.vcxproj).  This can lead to incorrect clean and rebuild behavior.
      1>ClCompile:
@@ -6,24 +6,25 @@
          GameLoop.cpp
      1>c:\users\anthony.touchet\documents\github\poppit-and-locket\math\engine story\your project\gameloop.cpp(5): warning C4838: conversion from 'double' to 'int' requires a narrowing conversion
      1>c:\users\anthony.touchet\documents\github\poppit-and-locket\math\engine story\your project\gameloop.cpp(5): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-     1>c:\users\anthony.touchet\documents\github\poppit-and-locket\math\engine story\your project\gameloop.cpp(51): warning C4244: 'initializing': conversion from 'clock_t' to 'float', possible loss of data
-     1>c:\users\anthony.touchet\documents\github\poppit-and-locket\math\engine story\your project\gameloop.cpp(52): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-     1>c:\users\anthony.touchet\documents\github\poppit-and-locket\math\engine story\your project\gameloop.cpp(63): warning C4553: '==': operator has no effect; did you intend '='?
-     1>c:\users\anthony.touchet\documents\github\poppit-and-locket\math\engine story\your project\gameloop.cpp(73): warning C4553: '==': operator has no effect; did you intend '='?
-     1>c:\users\anthony.touchet\documents\github\poppit-and-locket\math\engine story\your project\gameloop.cpp(84): warning C4553: '==': operator has no effect; did you intend '='?
-     1>c:\users\anthony.touchet\documents\github\poppit-and-locket\math\engine story\your project\gameloop.cpp(94): warning C4553: '==': operator has no effect; did you intend '='?
-     1>c:\users\anthony.touchet\documents\github\poppit-and-locket\math\engine story\your project\gameloop.cpp(105): warning C4553: '==': operator has no effect; did you intend '='?
-     1>c:\users\anthony.touchet\documents\github\poppit-and-locket\math\engine story\your project\gameloop.cpp(115): warning C4553: '==': operator has no effect; did you intend '='?
-     1>c:\users\anthony.touchet\documents\github\poppit-and-locket\math\engine story\your project\gameloop.cpp(122): warning C4552: '*': operator has no effect; expected operator with side-effect
-     1>c:\users\anthony.touchet\documents\github\poppit-and-locket\math\engine story\your project\gameloop.cpp(127): warning C4552: '*': operator has no effect; expected operator with side-effect
-     1>c:\users\anthony.touchet\documents\github\poppit-and-locket\math\engine story\your project\gameloop.cpp(132): warning C4552: '*': operator has no effect; expected operator with side-effect
-     1>c:\users\anthony.touchet\documents\github\poppit-and-locket\math\engine story\your project\gameloop.cpp(137): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
-     1>c:\users\anthony.touchet\documents\github\poppit-and-locket\math\engine story\your project\gameloop.cpp(137): warning C4552: '*': operator has no effect; expected operator with side-effect
-     1>c:\users\anthony.touchet\documents\github\poppit-and-locket\math\engine story\your project\gameloop.cpp(142): warning C4552: '*': operator has no effect; expected operator with side-effect
-     1>c:\users\anthony.touchet\documents\github\poppit-and-locket\math\engine story\your project\gameloop.cpp(145): warning C4552: '*': operator has no effect; expected operator with side-effect
-     1>c:\users\anthony.touchet\documents\github\poppit-and-locket\math\engine story\your project\gameloop.cpp(199): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+     1>c:\users\anthony.touchet\documents\github\poppit-and-locket\math\engine story\your project\gameloop.cpp(37): warning C4244: 'initializing': conversion from 'clock_t' to 'float', possible loss of data
+     1>c:\users\anthony.touchet\documents\github\poppit-and-locket\math\engine story\your project\gameloop.cpp(38): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+     1>c:\users\anthony.touchet\documents\github\poppit-and-locket\math\engine story\your project\gameloop.cpp(49): warning C4553: '==': operator has no effect; did you intend '='?
+     1>c:\users\anthony.touchet\documents\github\poppit-and-locket\math\engine story\your project\gameloop.cpp(59): warning C4553: '==': operator has no effect; did you intend '='?
+     1>c:\users\anthony.touchet\documents\github\poppit-and-locket\math\engine story\your project\gameloop.cpp(70): warning C4553: '==': operator has no effect; did you intend '='?
+     1>c:\users\anthony.touchet\documents\github\poppit-and-locket\math\engine story\your project\gameloop.cpp(80): warning C4553: '==': operator has no effect; did you intend '='?
+     1>c:\users\anthony.touchet\documents\github\poppit-and-locket\math\engine story\your project\gameloop.cpp(91): warning C4553: '==': operator has no effect; did you intend '='?
+     1>c:\users\anthony.touchet\documents\github\poppit-and-locket\math\engine story\your project\gameloop.cpp(101): warning C4553: '==': operator has no effect; did you intend '='?
+     1>c:\users\anthony.touchet\documents\github\poppit-and-locket\math\engine story\your project\gameloop.cpp(108): warning C4552: '*': operator has no effect; expected operator with side-effect
+     1>c:\users\anthony.touchet\documents\github\poppit-and-locket\math\engine story\your project\gameloop.cpp(113): warning C4552: '*': operator has no effect; expected operator with side-effect
+     1>c:\users\anthony.touchet\documents\github\poppit-and-locket\math\engine story\your project\gameloop.cpp(118): warning C4552: '*': operator has no effect; expected operator with side-effect
+     1>c:\users\anthony.touchet\documents\github\poppit-and-locket\math\engine story\your project\gameloop.cpp(123): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
+     1>c:\users\anthony.touchet\documents\github\poppit-and-locket\math\engine story\your project\gameloop.cpp(123): warning C4552: '*': operator has no effect; expected operator with side-effect
+     1>c:\users\anthony.touchet\documents\github\poppit-and-locket\math\engine story\your project\gameloop.cpp(128): warning C4552: '*': operator has no effect; expected operator with side-effect
+     1>c:\users\anthony.touchet\documents\github\poppit-and-locket\math\engine story\your project\gameloop.cpp(131): warning C4552: '*': operator has no effect; expected operator with side-effect
+     1>c:\users\anthony.touchet\documents\github\poppit-and-locket\math\engine story\your project\gameloop.cpp(185): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+     1>c:\users\anthony.touchet\documents\github\poppit-and-locket\math\engine story\your project\gameloop.cpp(28): warning C4101: 'sdlEvent': unreferenced local variable
      1>c:\users\anthony.touchet\documents\github\poppit-and-locket\math\engine story\your project\dependencies\include\graphics\graphics.h(352): warning C4244: 'argument': conversion from 'const int' to 'GLfloat', possible loss of data
-         c:\users\anthony.touchet\documents\github\poppit-and-locket\math\engine story\your project\gameloop.cpp(210): note: see reference to function template instantiation 'void Graphics::DrawCircle<int>(const System::Point2D<int>,const T,const T,const System::Color<T> &)' being compiled
+         c:\users\anthony.touchet\documents\github\poppit-and-locket\math\engine story\your project\gameloop.cpp(196): note: see reference to function template instantiation 'void Graphics::DrawCircle<int>(const System::Point2D<int>,const T,const T,const System::Color<T> &)' being compiled
                  with
                  [
                      T=int
@@ -31,7 +32,7 @@
      1>c:\users\anthony.touchet\documents\github\poppit-and-locket\math\engine story\your project\dependencies\include\graphics\graphics.h(356): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
      1>c:\users\anthony.touchet\documents\github\poppit-and-locket\math\engine story\your project\dependencies\include\graphics\graphics.h(357): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
      1>c:\users\anthony.touchet\documents\github\poppit-and-locket\math\engine story\your project\dependencies\include\graphics\graphics.h(297): warning C4244: 'argument': conversion from 'const int' to 'GLfloat', possible loss of data
-         c:\users\anthony.touchet\documents\github\poppit-and-locket\math\engine story\your project\gameloop.cpp(229): note: see reference to function template instantiation 'void Graphics::DrawLine<int>(const System::Point2D<int> &,const System::Point2D<int> &,const System::Color<int> &)' being compiled
+         c:\users\anthony.touchet\documents\github\poppit-and-locket\math\engine story\your project\gameloop.cpp(215): note: see reference to function template instantiation 'void Graphics::DrawLine<int>(const System::Point2D<int> &,const System::Point2D<int> &,const System::Color<int> &)' being compiled
      1>c:\users\anthony.touchet\documents\github\poppit-and-locket\math\engine story\your project\dependencies\include\graphics\graphics.h(298): warning C4244: 'argument': conversion from 'const int' to 'GLfloat', possible loss of data
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\anthony.touchet\Documents\GitHub\Poppit-and-Locket\Math\Engine Story\Debug\Story.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\anthony.touchet\Documents\GitHub\Poppit-and-Locket\Math\Engine Story\Your Project\\Dependencies\lib" /LIBPATH:"C:\Users\anthony.touchet\Documents\GitHub\Poppit-and-Locket\Math\Engine Story\Your Project\\Dependencies\lib\SDL" /LIBPATH:"C:\Users\anthony.touchet\Documents\GitHub\Poppit-and-Locket\Math\Engine Story\Your Project\\Dependencies\lib\OpenGL" "SDL-OpenGL Student Library.lib" MathLibrary.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\anthony.touchet\Documents\GitHub\Poppit-and-Locket\Math\Engine Story\Debug\Story.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\anthony.touchet\Documents\GitHub\Poppit-and-Locket\Math\Engine Story\Debug\Story.lib" /MACHINE:X86 Debug\GameLoop.obj
@@ -41,4 +42,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.33
+Time Elapsed 00:00:01.22
