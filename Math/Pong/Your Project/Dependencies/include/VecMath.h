@@ -103,6 +103,4 @@ public:
 
 		return angle;
 	}
-
-	
 };
