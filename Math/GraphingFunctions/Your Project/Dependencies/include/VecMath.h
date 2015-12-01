@@ -8,6 +8,7 @@ public:
 	V x;
 	V y;
 	V z = 0;
+	V alpha = 0;
 
 	void Print()
 	{
@@ -25,6 +26,14 @@ public:
 		x = a;
 		y = b;
 		z = c;
+	}
+
+	Vector(V a, V b, V c, V d)
+	{
+		x = a;
+		y = b;
+		z = c;
+		alpha = d;
 	}
 
 	Vector operator+(Vector other)
@@ -103,4 +112,21 @@ public:
 
 		return angle;
 	}
+
+	double LinearInterpolation(float a, float b, float perc)//LinearInterpolation
+	{
+		return (a + (b - a)) * perc;
+	}
+
+	float DtoR(int d)//Degrees to Radians
+	{
+		return (d / 180)*3.14;
+	}
+
+	float RtoD(int r)//Radians to degrees
+	{
+		return (r / 3.14) * 180;
+	}
+
 };
+

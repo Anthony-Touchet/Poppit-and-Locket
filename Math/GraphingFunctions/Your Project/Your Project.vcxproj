@@ -75,7 +75,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\Users\anthony.touchet\Documents\GitHub\AIE_Framework-2015\Your Project\Dependencies\include;$(ProjectDir)\Dependencies\include\SDL;$(ProjectDir)\Dependencies\include\OpenGL;$(ProjectDir)\Dependencies\include\Graphics;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)\Dependencies\include;$(ProjectDir)\Dependencies\include\SDL;$(ProjectDir)\Dependencies\include\OpenGL;$(ProjectDir)\Dependencies\include\Graphics;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>

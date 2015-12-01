@@ -2,8 +2,23 @@
 #include <ctime>
 
 Vector<float> GetNumber();
+Vector<float> AddTwo();
+float DegreestoRads();
+float LinTin();
 Vector<float>(*Graph)() = &GetNumber;
-int functionNum = 1;
+float(*Number)() = &DegreestoRads;
+bool graph = false;
+float incx;
+float incy;
+
+bool num = false;
+
+float currentTime = 0;
+float previousTime = 0;
+float deltaTime = 0;
+
+Vector<int> Position = { 50, 450 };
+Vector<int> Color(255, 0, 0, 255);
 
 void GameLoop::Loop()
 {
@@ -24,6 +39,13 @@ void GameLoop::Loop()
 				OnEvent(sdlEvent);
 			}
 
+			float div = 1000;
+			float ct = clock();
+			currentTime = (float)ct / div;
+			deltaTime = currentTime - previousTime;
+
+			Update();//Will mostly control moving objects
+
 			Draw();
 
 			Graphics::Flip(); // Required to update the window with all the newly drawn content
@@ -31,8 +53,24 @@ void GameLoop::Loop()
 	}
 }
 
+void GameLoop::Update()
+{
+	float control = 2.5;
+	if (previousTime <= currentTime)
+	{
+		Position.x += 3;
+	}
+
+	if (Position.x - 50 >= 1600)
+	{
+		Position.x = 50;
+	}
+}
+
 void GameLoop::Draw()
 {
+	Graphics::DrawCircle({ Position.x, Position.y }, 50, 50, { Color.x, Color.y, Color.z, Color.alpha });
+
 	Graphics::DrawLine({ 25, 875 }, {1600, 875}, {255, 0, 0, 255});// X Axis
 	Graphics::DrawLine({ 25, 875 }, { 25, 0 }, { 255, 0, 0, 255 });//Y Axis
 	
@@ -53,23 +91,26 @@ void GameLoop::Draw()
 	}
 
 	//Test Function
-	float incx, incy;
-	Vector<float> inc(Graph());		//Incrementing Variables
-	float f1x, f1y;					//Function's start point
-
-	//Function manipulation
-
-	f1x = 25;			//Start Position X
-	f1y = 875;			//Start Position Y
-	inc.y *= -1;		//To go up in this program you need to decrement y. in actual graphing you increase y. This is here to convert from engine to actual graphing.
-
-	for (int w = 0; w < 5; w++)
+	if (graph == true)
 	{
-		Graphics::DrawLine({ f1x, f1y }, { f1x + (inc.x * 5), f1y + (inc.y * 5) }, { 0, 255, 0, 255 });
-		f1x = f1x + (inc.x * 2);
-		f1y = f1y + (inc.y * 2);
+//Function manipulation
+		Vector<float> inc(Graph());
+		inc.y *= -1;		//To go up in this program you need to decrement y. in actual graphing you increase y. This is here to convert from engine to actual graphing.
+
+		Graphics::DrawLine({ 25, 875 }, { 25 + (inc.x * 50), 875 + (inc.y * 50) }, { 0, 255, 0, 255 });
+		incx = inc.x * 50;
+		incy = inc.y * 50;
+		graph = false;
 	}
 
+	Graphics::DrawLine({ 25, 875 }, { 25 + incx, 875 + incy }, { 0, 255, 0, 255 });
+	
+	if (num == true)
+	{
+		float inc(Number());
+		cout << inc << endl;
+		num = false;
+	}
 }
 
 void GameLoop::OnKeyDown(const SDL_Keycode ac_sdlSym , const Uint16 ac_uiMod, const SDL_Scancode ac_sdlScancode)
@@ -82,7 +123,36 @@ void GameLoop::OnKeyDown(const SDL_Keycode ac_sdlSym , const Uint16 ac_uiMod, co
 		switch (ac_sdlSym)	//Movement
 		{
 		default:
+		case SDLK_g:
+			int controler;
+			cout << "Press 1 to graph one function.\nPress 2 to add two together.\nPress 3 to turn Degrees to Radians.\nPress 4 to find a ceratin point between two numbers.\nAny Error will result in one being default.\n";
+			cin >> controler;
+
+			if (controler == 2)
+			{
+				graph = true;
+				Graph = &AddTwo;
+			}
+
+			else if (controler == 3)
+			{
+				num = true;
+				Number = &DegreestoRads;
+			}
+
+			else if (controler == 4)
+			{
+				num = true;
+				Number = &LinTin;
+			}
+
+			else
+			{
+				graph = true;
+				Graph = &GetNumber;
+			}
 			break;
+
 		}
 		printf("%s\n",SDL_GetKeyName(ac_sdlSym)); break;//Prints Keystroke to other console window.
 	}
@@ -110,13 +180,55 @@ GameLoop::~GameLoop()
 
 }
 
-Vector<float> GetNumber()
+Vector<float> GetNumber()//Basic graphing Vectors
 {
 	Vector<float> N(0, 0);
-	cout << "Please Enter a X increment for function " << functionNum << ".\n";
+	cout << "Please Enter a X increment for the function.\n";
 	cin >> N.x;
-	cout << "Please Enter a Y increment for function " << functionNum << ".\n";
+	cout << "Please Enter a Y increment for the function.\n";
 	cin >> N.y;
-	functionNum++;
 	return N;
+}
+
+Vector<float> AddTwo()//Adding two vectors
+{
+	Vector<float> N(0, 0);
+	cout << "Please Enter a X increment for Vector 1.\n";
+	cin >> N.x;
+	cout << "Please Enter a Y increment for Vector 1.\n";
+	cin >> N.y;
+
+	Vector<float> Z(0, 0);
+	cout << "Please Enter a X increment for Vector 2.\n";
+	cin >> Z.x;
+	cout << "Please Enter a Y increment for Vector 2.\n";
+	cin >> Z.y;
+
+	return N + Z;
+}
+
+float DegreestoRads()//Converts Degrees to radians
+{
+	Vector<int> x(0,0,0);
+	cout << "Please Enter an integer for Degrees.\n";
+	cin >> x.x;
+
+	return x.DtoR(x.x);
+}
+
+float LinTin()//Linniar Interpolation
+{
+	float a;
+	float b;
+	float per;
+	cout << "Enter a starting number.\n";
+	cin >> a;
+
+	cout << "Enter a ending number.\n";
+	cin >> b;
+
+	cout << "Enter a percentage in the form of a decimal to find the middle of these two numbers.\nExample: 25% is .25.\n";
+	cin >> per;
+
+	return Position.LinearInterpolation(a, b, per);
 }
