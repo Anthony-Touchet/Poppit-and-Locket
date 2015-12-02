@@ -13,12 +13,9 @@ Math...
 
 int main() {
 
-	Vector<int> a(14, 5, -5);//Vector a
-	Vector<int> b(-2, 1, 43);//Vector b
-
-	Vector<int> result = a / b;
-
-	cout << result.x << ", " << result.y << ", " << result.z << endl;
+	Vector<int> toast(0,0);
+	char test[1]{};
+	toast.HexColor(test);
 
 	system("pause");
 }

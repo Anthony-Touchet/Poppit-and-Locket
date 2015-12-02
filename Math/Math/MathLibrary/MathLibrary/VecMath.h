@@ -128,5 +128,59 @@ public:
 		return (r / 3.14) * 180;
 	}
 
+	Vector<int> HexColor(/*string color[8]*/ char f[1])
+	{
+		//Vector<int> color;	//End Result
+
+		//string red[2];		//Color holders and assigning values
+		//string blue[2];
+		//string green[2];
+		//string alpha[2];
+
+		//red[0] = color[0];
+		//red[1] = color[1];
+
+		//green[0] = color[2];
+		//green[1] = color[3];
+		//
+		//blue[0] = color[4];
+		//blue[1] = color[5];
+		//
+		//alpha[0] = color[6];
+		//alpha[1] = color[7];
+
+		int sorter;
+		switch (f)
+		{
+		case (char)97:
+			sorter = 10;
+			break;
+
+		case (char)98:
+			sorter = 11;
+			break;
+
+		case (char)99:
+			sorter = 12;
+			break;
+
+		case (char)100:
+			sorter = 13;
+			break;
+
+		case (char)101:
+			sorter = 14;
+			break;
+
+		case (char)102:
+			sorter = 15;
+			break;
+
+		default:
+			break;
+		}
+
+		cout << sorter << endl;
+	}
 };
 

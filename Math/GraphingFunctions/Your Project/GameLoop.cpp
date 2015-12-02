@@ -4,7 +4,7 @@
 Vector<float> GetNumber();
 Vector<float> AddTwo();
 float DegreestoRads();
-float LinTin();
+Vector<float> LinTin();
 Vector<float>(*Graph)() = &GetNumber;
 float(*Number)() = &DegreestoRads;
 bool graph = false;
@@ -100,6 +100,7 @@ void GameLoop::Draw()
 		Graphics::DrawLine({ 25, 875 }, { 25 + (inc.x * 50), 875 + (inc.y * 50) }, { 0, 255, 0, 255 });
 		incx = inc.x * 50;
 		incy = inc.y * 50;
+		cout << inc.x << ", "<< inc.y << endl;
 		graph = false;
 	}
 
@@ -143,7 +144,7 @@ void GameLoop::OnKeyDown(const SDL_Keycode ac_sdlSym , const Uint16 ac_uiMod, co
 			else if (controler == 4)
 			{
 				num = true;
-				Number = &LinTin;
+				Graph = &LinTin;
 			}
 
 			else
@@ -216,19 +217,28 @@ float DegreestoRads()//Converts Degrees to radians
 	return x.DtoR(x.x);
 }
 
-float LinTin()//Linniar Interpolation
+Vector<float> LinTin()//Linniar Interpolation
 {
-	float a;
-	float b;
+	Vector<float> a(0,0);
+	Vector<float> b(0, 0);
+	Vector<float> c(0, 0);
 	float per;
-	cout << "Enter a starting number.\n";
-	cin >> a;
+	cout << "Enter an X value starting vector.\n";
+	cin >> a.x;
 
-	cout << "Enter a ending number.\n";
-	cin >> b;
+	cout << "Enter an Y value starting vector.\n";
+	cin >> a.y;
 
-	cout << "Enter a percentage in the form of a decimal to find the middle of these two numbers.\nExample: 25% is .25.\n";
+	cout << "Enter an X value ending vector.\n";
+	cin >> b.x;
+
+	cout << "Enter an Y value ending vector.\n";
+	cin >> b.y;
+
+	cout << "Enter a percentage in the form of a decimal to find the middle of these two Vectors.\nExample: 25% is .25.\n";
 	cin >> per;
 
-	return Position.LinearInterpolation(a, b, per);
+	c.x = c.LinearInterpolation(a.x, b.x, per);
+	c.y = c.LinearInterpolation(a.y, b.y, per);
+	return c;
 }
