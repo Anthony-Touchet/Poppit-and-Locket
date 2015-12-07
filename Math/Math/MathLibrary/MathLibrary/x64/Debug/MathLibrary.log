@@ -1,15 +1,13 @@
-﻿Build started 12/2/2015 1:19:46 PM.
-     1>Project "C:\Users\anthony.touchet\Documents\GitHub\Poppit-and-Locket\Math\Math\MathLibrary\MathLibrary\MathLibrary.vcxproj" on node 2 (Build target(s)).
+﻿Build started 12/7/2015 4:09:23 PM.
+     1>Project "C:\Users\anthony.touchet\Documents\GitHub\Poppit-and-Locket\Math\Math\MathLibrary\MathLibrary\MathLibrary.vcxproj" on node 2 (Rebuild target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Debug\\" /Fd"x64\Debug\MathLibrary.pdb" /Gd /TP /errorReport:prompt Source.cpp
          Source.cpp
-     1>c:\users\anthony.touchet\documents\github\poppit-and-locket\math\math\mathlibrary\mathlibrary\vecmath.h(154): error C2450: switch expression of type 'std::string []' is illegal
-         c:\users\anthony.touchet\documents\github\poppit-and-locket\math\math\mathlibrary\mathlibrary\vecmath.h(154): note: Integral expression required
-         c:\users\anthony.touchet\documents\github\poppit-and-locket\math\math\mathlibrary\mathlibrary\vecmath.h(132): note: while compiling class template member function 'Vector<int> Vector<int>::HexColor(std::string [])'
-         c:\users\anthony.touchet\documents\github\poppit-and-locket\math\math\mathlibrary\mathlibrary\source.cpp(19): note: see reference to function template instantiation 'Vector<int> Vector<int>::HexColor(std::string [])' being compiled
-         c:\users\anthony.touchet\documents\github\poppit-and-locket\math\math\mathlibrary\mathlibrary\source.cpp(16): note: see reference to class template instantiation 'Vector<int>' being compiled
-     1>Done Building Project "C:\Users\anthony.touchet\Documents\GitHub\Poppit-and-Locket\Math\Math\MathLibrary\MathLibrary\MathLibrary.vcxproj" (Build target(s)) -- FAILED.
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\Lib.exe /OUT:"C:\Users\anthony.touchet\Documents\GitHub\Poppit-and-Locket\Math\Math\MathLibrary\x64\Debug\MathLibrary.lib" /NOLOGO /MACHINE:X64 x64\Debug\Source.obj
+         MathLibrary.vcxproj -> C:\Users\anthony.touchet\Documents\GitHub\Poppit-and-Locket\Math\Math\MathLibrary\x64\Debug\MathLibrary.lib
+     1>Done Building Project "C:\Users\anthony.touchet\Documents\GitHub\Poppit-and-Locket\Math\Math\MathLibrary\MathLibrary\MathLibrary.vcxproj" (Rebuild target(s)).
 
-Build FAILED.
+Build succeeded.
 
-Time Elapsed 00:00:00.31
+Time Elapsed 00:00:00.53

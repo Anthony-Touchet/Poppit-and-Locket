@@ -128,5 +128,14 @@ public:
 		return (r / 3.14) * 180;
 	}
 
-};
+	Vector<int> HexColor(unsigned int HexColor)
+	{
+		unsigned int Hexred = HexColor >> 24;
+		unsigned int Hexgreen = (HexColor >> 16) & 0x00FF;
+		unsigned int Hexblue = (HexColor >> 8) & 0x0000FF;
+		unsigned int Hexalpha = HexColor & 0x000000FF;
+		Vector<int> hex(Hexred, Hexgreen, Hexblue, Hexalpha);
 
+		return hex;
+	}
+};

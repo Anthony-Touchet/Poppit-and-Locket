@@ -11,11 +11,10 @@ Math...
 
 #include "VecMath.h"
 
-int main() {
+int main() 
+{
+	Vector<int> test = test.HexColor(0xFFFFFFFF);
 
-	Vector<int> toast(0,0);
-	char test[1]{};
-	toast.HexColor(test);
-
+	cout << test.x << "\n" << test.y << "\n" << test.z << "\n" << test.alpha << endl;
 	system("pause");
 }

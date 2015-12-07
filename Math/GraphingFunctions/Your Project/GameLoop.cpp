@@ -18,7 +18,7 @@ float previousTime = 0;
 float deltaTime = 0;
 
 Vector<int> Position = { 50, 450 };
-Vector<int> Color(255, 0, 0, 255);
+Vector<int> Color = Color.HexColor(0xFF0000FF);
 
 void GameLoop::Loop()
 {
