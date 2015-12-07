@@ -100,7 +100,7 @@ void GameLoop::Draw()
 		Graphics::DrawLine({ 25, 875 }, { 25 + (inc.x * 50), 875 + (inc.y * 50) }, { 0, 255, 0, 255 });
 		incx = inc.x * 50;
 		incy = inc.y * 50;
-		cout << inc.x << ", "<< inc.y << endl;
+		cout << inc.x << ", "<< -(inc.y) << endl;
 		graph = false;
 	}
 
@@ -135,15 +135,15 @@ void GameLoop::OnKeyDown(const SDL_Keycode ac_sdlSym , const Uint16 ac_uiMod, co
 				Graph = &AddTwo;
 			}
 
-			else if (controler == 3)
+			if (controler == 3)
 			{
 				num = true;
 				Number = &DegreestoRads;
 			}
 
-			else if (controler == 4)
+			if (controler == 4)
 			{
-				num = true;
+				graph = true;
 				Graph = &LinTin;
 			}
 
