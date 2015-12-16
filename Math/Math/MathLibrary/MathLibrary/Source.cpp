@@ -13,8 +13,11 @@ Math...
 
 int main() 
 {
-	Vector<int> test = test.HexColor(0xFFFFFFFF);
+	Rect rec1(25, 100, { 50, 50 }, 'a');
+	Rect rec2(50, 200, { 75, 150 }, 'b');
+	Rect rec3( 25, 50, { 200, 50 }, 'c' );
 
-	cout << test.x << "\n" << test.y << "\n" << test.z << "\n" << test.alpha << endl;
+	
+
 	system("pause");
 }

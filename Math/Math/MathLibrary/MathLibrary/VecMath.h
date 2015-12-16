@@ -5,14 +5,22 @@ using namespace std;
 template<typename V>
 class Vector {
 public:
-	V x;
-	V y;
+	V x = 0;
+	V y = 0;
 	V z = 0;
 	V alpha = 0;
 
 	void Print()
 	{
 		cout << x << " " << y << " " << z << endl;
+	}
+
+	Vector()
+	{
+		x = 0;
+		y = 0;
+		z = 0;
+		alpha = 0;
 	}
 
 	Vector(V a, V b)
@@ -66,9 +74,24 @@ public:
 
 	Vector Nomalize()
 	{
-		double newx = x / z;
-		double newy = y / z;
-		double newz = z / z;
+		double div;
+		if (x >= y && x >= z)
+		{
+			div = x;
+		}
+
+		else if (y >= x && y >= z)
+		{
+			div = y;
+		}
+
+		else
+		{
+			div = z;
+		}
+		double newx = x / div;
+		double newy = y / div;
+		double newz = z / div;
 
 		Vector temp(newx, newy, newz);
 		return temp;
@@ -137,5 +160,120 @@ public:
 		Vector<int> hex(Hexred, Hexgreen, Hexblue, Hexalpha);
 
 		return hex;
+	}
+
+	bool SquareCollision(Vector first, Vector other)
+	{
+		Vector<float> max1 = first;
+		Vector<float> max2 = other;
+
+		Vector<float> min1 = { max1.x + 50, max1.y + 50 };
+		Vector<float> min2 = { max2.x + 50, max2.y + 50 };
+
+		if (max1.x <= min2.x && max2.x <= min1.x && max1.y <= min2.y && max2.y <= min1.y)
+		{
+			return true;
+		}
+
+		else
+		{
+			return false;
+		}
+	}
+
+	bool CircleCollision(Vector c1, Vector c2)
+	{
+		if (sqrt((c1 - c2) * (c1 - c2)) <= c1.z + c2.z)
+		{
+			return true;
+		}
+
+		else
+		{
+			return false;
+		}
+	}
+};
+
+class Rect {
+public:
+	float height;
+	float width;
+	Vector<float> min;
+	Vector<float> max;
+	Vector<float> Pos;
+	char name;
+	
+	Rect *pre;
+	Rect *next;
+	
+	Rect(int h, int w, Vector<float> pos, char na)
+	{
+		height = h;
+		width = w;
+		Pos = pos;
+		min = pos;
+		max = { Pos.x + w, Pos.y + h };
+		name = na;
+	}
+
+	void SetNext(Rect &ne)
+	{
+		next = &ne;
+		ne.pre = this;
+	}
+
+	void SetPre(Rect &ne)
+	{
+		pre = &ne;
+	}
+
+	void Read(Rect &start)
+	{
+		Rect *current = &start;
+		for (int i = 0; i < 50; i++)
+		{	
+			if (current == NULL)
+			{
+				cout << current->name << endl;
+				break;
+			}
+
+			else
+			{
+				cout << current->name << endl;
+				current = current->next;
+			}
+			
+		}
+	}
+};
+
+class Node {
+public:
+	Vector<float> value;
+	bool minMax;
+	char belong;
+	Node *next;
+	Node *pre;
+
+	Node(Vector<float> val, bool mm, char be, Node &ne, Node *pr)
+	{
+		value = val;
+		minMax = mm;
+		belong = be;
+		Node *next;
+		Node *pre;
+	}
+
+	void SetNext(Node &ne)
+	{
+		next = &ne;
+		ne.pre = this;
+	}
+
+	void SetPre(Node &ne)
+	{
+		pre = &ne;
 	}
 };
