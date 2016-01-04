@@ -204,9 +204,6 @@ public:
 	Vector<float> Pos;
 	char name;
 	
-	Rect *pre;
-	Rect *next;
-	
 	Rect(int h, int w, Vector<float> pos, char na)
 	{
 		height = h;
@@ -216,48 +213,18 @@ public:
 		max = { Pos.x + w, Pos.y + h };
 		name = na;
 	}
-
-	void SetNext(Rect &ne)
-	{
-		next = &ne;
-		ne.pre = this;
-	}
-
-	void SetPre(Rect &ne)
-	{
-		pre = &ne;
-	}
-
-	void Read(Rect &start)
-	{
-		Rect *current = &start;
-		for (int i = 0; i < 50; i++)
-		{	
-			if (current == NULL)
-			{
-				cout << current->name << endl;
-				break;
-			}
-
-			else
-			{
-				cout << current->name << endl;
-				current = current->next;
-			}
-			
-		}
-	}
 };
 
 class Node {
 public:
+
 	Vector<float> value;
 	bool minMax;
-	char belong;
+	int belong;
 	Node *next;
 	Node *pre;
 
-	Node(Vector<float> val, bool mm, char be)
+	Node (Vector<float> val, bool mm, int be)
 	{
 		value = val;
 		minMax = mm;
@@ -273,13 +240,13 @@ public:
 		{
 			if (current->next == NULL)
 			{
-				current->value.Print();
+				cout << belong << endl;
 				break;
 			}
 
 			else
 			{
-				current->value.Print();
+				cout << belong << endl;
 				*current = *current->next;
 			}
 		}
@@ -296,17 +263,81 @@ public:
 		pre = &ne;
 	}
 
-	void Insert(Node &a, Node &b)
+	void Insert(Node *a, Node *b)
 	{
-		this->next = &b;
-		this->pre = &a;
+		this->next = b;
+		this->pre = a;
 
-		a.next = this;
-		b.pre = this;
+		a->next = this;
+		b->pre = this;
 	}
 
-	void Remove(Node &a)
+	void Remove()
 	{
+		if (this->next == NULL)//Pre
+		{
+			this->pre->next = NULL;
+		}
 
+		else
+		{	
+			this->pre->next = this->next;
+		}
+		
+		if (this->pre->next != NULL)
+		{
+			if (this->pre == NULL)//Next
+			{
+				this->next->pre = NULL;
+			}
+
+			else
+			{
+				this->next->pre = this->pre;
+			}
+		}
+
+		this->next = NULL;
+		this->pre = NULL;
+	}
+
+	bool Compare(Node &node)
+	{
+		if (node.value.x > this->value.x)
+		{
+			return true;
+		}
+
+		else
+		{
+			return false;
+		}
+	}
+
+	bool SortCompare(Node &start)
+	{
+		Node *current = &start;
+		for (int i = 0; i < 50; i++)
+		{
+			if (current->next != NULL)
+			{
+				Node *compare = current->next;
+				if (current->Compare(*compare) == false)
+				{
+					return false;
+				}
+
+				Node *change = current->next;
+				current = change;
+			}
+		}
+
+		return true;
+	}
+
+	Vector<int> CompareName(Node *current, int num)
+	{	
+		Vector<int> result = {num, current->belong};
+		return result;
 	}
 };
