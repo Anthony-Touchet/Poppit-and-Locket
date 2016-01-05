@@ -66,16 +66,17 @@ int main()
 	}
 
 //What colides?
-	Vector<int> active[3];	//Active list
+	Vector<int> active[10];	//Active list
 
 	current = &min1;
-	int num = 1;
-	int *arr = 0;
+	int nump = 1;
+	int *num = &nump;
+	int arr = 0;
+	Node *start = NULL;	//min
+	Node *end = NULL;	//max
+
 	for (int sor = 0; sor < 500; sor++)
 	{  
-		Node *start = NULL;	//min
-		Node *end = NULL;	//max
-		
 		if (num >= 4)
 		{
 			break;
@@ -86,36 +87,41 @@ int main()
 			end = NULL;
 			start = NULL;
 			current = &min1;
+			*num += 1;
 		}
 
 		if (current != NULL || current != end)
 		{
-			Node *compare = current->next;
-			if (current->belong == num && current->minMax == true)
+			if (current->belong == *num && current->minMax == true)
 			{
 				start = current;
 			}
 
-			if (current->belong == num && current->minMax == false)
+			else if (current->belong == *num && current->minMax == false)
 			{
 				end = current;
 			}
 		}
 
-		if ()
+		if (start != NULL && end != NULL)
 		{
 			current = start->next;
-			active[*arr] = current->CompareName(num);
-			current = current->next;
-			*arr += 1;
+			active[arr] = current->CompareName(*num);	//Stores collision in active list
+			arr += 1;									//Storage of array
 		}	
+		
+		current = current->next;	//Next Node in list
 	}
 
-	/*min1.read(min1);*/
-
-	for (int r = 0; r < *arr; r++)
+	for (int r = 0; r < arr; r++)	//Print out active list
 	{
-		cout << active[r].x << ", " << active[r].y << endl;
+		if (active[r].x > 0 || active[r].y > 0)
+		{
+			if (active[r - 1].x + active[r].x != active[r - 1].y + active[r].y)
+			{
+				cout << active[0 + r].x << ", " << active[r].y << endl;
+			}
+		}
 	}
 
 	system("pause");
