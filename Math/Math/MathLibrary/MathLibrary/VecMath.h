@@ -335,9 +335,9 @@ public:
 		return true;
 	}
 
-	Vector<int> CompareName(Node *current, int num)
+	Vector<int> CompareName(int num)
 	{	
-		Vector<int> result = {num, current->belong};
+		Vector<int> result = {num, this->belong};
 		return result;
 	}
 };

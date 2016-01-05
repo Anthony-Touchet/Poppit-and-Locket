@@ -70,10 +70,9 @@ int main()
 
 	current = &min1;
 	int num = 1;
-	int arr = 0;
+	int *arr = 0;
 	for (int sor = 0; sor < 500; sor++)
 	{  
-		
 		Node *start = NULL;	//min
 		Node *end = NULL;	//max
 		
@@ -89,12 +88,7 @@ int main()
 			current = &min1;
 		}
 
-		if (current == NULL && start != NULL || current == NULL && end != NULL)
-		{
-			break;
-		}
-
-		if (current->next != NULL && start != NULL || current->next != NULL && end != NULL)
+		if (current != NULL || current != end)
 		{
 			Node *compare = current->next;
 			if (current->belong == num && current->minMax == true)
@@ -108,18 +102,18 @@ int main()
 			}
 		}
 
-		if (start != NULL && end != NULL)
+		if ()
 		{
 			current = start->next;
-			active[arr] = current->CompareName(current, num);
+			active[*arr] = current->CompareName(num);
 			current = current->next;
-			arr += 1;
+			*arr += 1;
 		}	
 	}
 
-	min1.read(min1);
+	/*min1.read(min1);*/
 
-	for (int r = 0; r < arr; r++)
+	for (int r = 0; r < *arr; r++)
 	{
 		cout << active[r].x << ", " << active[r].y << endl;
 	}
