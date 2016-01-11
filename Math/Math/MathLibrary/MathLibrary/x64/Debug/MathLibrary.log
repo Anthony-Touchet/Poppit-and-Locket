@@ -1,4 +1,4 @@
-﻿Build started 1/4/2016 4:27:25 PM.
+﻿Build started 1/11/2016 10:06:55 AM.
      1>Project "C:\Users\anthony.touchet\Documents\GitHub\Poppit-and-Locket\Math\Math\MathLibrary\MathLibrary\MathLibrary.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Debug\\" /Fd"x64\Debug\vc140.pdb" /Gd /TP /errorReport:prompt Source.cpp
@@ -14,4 +14,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.11
+Time Elapsed 00:00:00.71

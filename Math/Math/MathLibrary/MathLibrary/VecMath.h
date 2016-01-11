@@ -240,13 +240,13 @@ public:
 		{
 			if (current->next == NULL)
 			{
-				cout << belong << endl;
+				cout << belong << " " << minMax << endl;
 				break;
 			}
 
 			else
 			{
-				cout << belong << endl;
+				cout << belong << " " << minMax << endl;
 				*current = *current->next;
 			}
 		}

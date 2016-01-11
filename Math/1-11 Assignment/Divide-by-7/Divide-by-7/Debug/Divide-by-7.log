@@ -1,0 +1,10 @@
+﻿Build started 1/11/2016 10:24:31 AM.
+     1>Project "C:\Users\anthony.touchet\Documents\GitHub\Poppit-and-Locket\Math\1-11 Assignment\Divide-by-7\Divide-by-7\Divide-by-7.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\anthony.touchet\Documents\GitHub\Poppit-and-Locket\Math\1-11 Assignment\Divide-by-7\Debug\Divide-by-7.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\anthony.touchet\Documents\GitHub\Poppit-and-Locket\Math\1-11 Assignment\Divide-by-7\Debug\Divide-by-7.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\anthony.touchet\Documents\GitHub\Poppit-and-Locket\Math\1-11 Assignment\Divide-by-7\Debug\Divide-by-7.lib" /MACHINE:X86 Debug\Source.obj
+         Divide-by-7.vcxproj -> C:\Users\anthony.touchet\Documents\GitHub\Poppit-and-Locket\Math\1-11 Assignment\Divide-by-7\Debug\Divide-by-7.exe
+     1>Done Building Project "C:\Users\anthony.touchet\Documents\GitHub\Poppit-and-Locket\Math\1-11 Assignment\Divide-by-7\Divide-by-7\Divide-by-7.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.17
